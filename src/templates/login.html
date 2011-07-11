@@ -1,0 +1,16 @@
+<%inherit file="layout.html"/>
+
+<%def name="header()">
+    Login
+</%def>
+
+<%def name="body()">
+    <form method="POST" action="/login">
+    	${form.render()}
+    </form>
+    % if errors is not UNDEFINED:
+    	% for e in errors:
+    		<p>${e}</p>
+    	% endfor
+    % endif
+</%def>

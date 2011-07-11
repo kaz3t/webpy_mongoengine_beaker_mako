@@ -1,0 +1,20 @@
+<%inherit file="layout.html"/>
+
+<%def name="header()">
+    Home
+</%def>
+
+<%def name="body()">
+    % if user.is_authenticated():
+        <p>
+            ${user.username} |
+            <a href="/logout">Logout</a>
+        </p>
+    % else:
+        <p>
+            <a href="/register">Register</a>
+            |
+            <a href="/login">Login</a>
+        </p>
+    % endif
+</%def>

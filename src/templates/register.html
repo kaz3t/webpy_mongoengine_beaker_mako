@@ -1,0 +1,16 @@
+<%inherit file="layout.html"/>
+
+<%def name="header()">
+    Register
+</%def>
+
+<%def name="body()">
+    <form method="POST" action="/register">
+    	${form.render()}
+    </form>
+    % if errors is not UNDEFINED:
+    	% for e in errors:
+    		<p>${e}</p>
+    	% endfor
+    % endif
+</%def>
